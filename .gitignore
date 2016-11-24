@@ -1,0 +1,5 @@
+
+
+config/app.yml
+db/*.*
+.bundle/
