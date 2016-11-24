@@ -1,5 +1,5 @@
-appcplwmpc
-cler,clp;er,c
-er;cl,er;lc,
 
-app.app
+
+config/app.yml
+db/*.*
+.bundle/
