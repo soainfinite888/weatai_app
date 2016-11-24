@@ -5,4 +5,9 @@ div class="row"
         th Instant Weather
     tbody
       tr
-        td 
+        td Location: #{weather[:city]}#{weather[:township]}
+        td Temperature: #{weather[:temperature]}
+        td Humidity: #{weather[:humidity]}
+        td 10-minutes rainfall: #{weather[:MIN_10]}
+        td PSI: #{weather[:AirQuality]}
+        td Status: #{weather[:Status]}
