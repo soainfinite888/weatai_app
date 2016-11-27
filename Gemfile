@@ -3,18 +3,23 @@ source 'https://rubygems.org'
 gem 'sinatra', '2.0.0.beta2'
 gem 'puma'
 gem 'econfig'
-gem 'http'
 gem 'activesupport'
 gem 'simplecov'
-gem 'flog'
-gem 'flay'
-gem 'rubocop'
 gem 'weatai', '0.1.5'
 gem 'json'
 gem 'sequel'  #sequel: Our object-relational mapper
 gem 'rake'
+gem 'slim'
+gem 'rack-flash3'
+gem 'rubocop'
+gem 'http'
+
 gem 'roar'
 gem 'multi_json'
+gem 'dry-monads'
+gem 'dry-validation'
+gem 'dry-container'
+gem 'dry-transaction'
 
 group :development, :test do
 	gem 'sqlite3'  #sqlite3: Local file-based database server
@@ -46,8 +51,6 @@ group :production do
   gem 'pg'
   gem 'tux'
   gem 'hirb'
-
-
 end
 
 
