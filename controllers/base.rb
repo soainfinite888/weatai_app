@@ -2,24 +2,23 @@
 require 'sinatra'
 require 'econfig'
 
-# configure based on environment
-class WeataiAPI < Sinatra::Base
+# configure web application
+class WeataiApp < Sinatra::Base
   extend Econfig::Shortcut
-
-  API_VER = 'api/v0.1'
 
   configure do
     Econfig.env = settings.environment.to_s
     Econfig.root = File.expand_path('..',settings.root)
-    CWB::CWBApi.config.update(dataid1: config.DATA_ID1,
-                              dataid2: config.DATA_ID2,
-                              key:     config.AUTH_KEY, 
-                              format:  config.FORMAT,
-                              token:   config.TOKEN)  #key update
   end
   
-  get '/?' do
-    "WeataiAPI latest version endpoints are at: /#{API_VER}/"
+  use Rack::Session::Cookie#, secret: WeataiApp.config.AUTH_KEY
+  use Rack::Flash
+
+  set :views, File.expand_path('../../views', __FILE__)
+  #set :public_dir, File.expand_path('../../public', __FILE__)
+  
+  after do
+    content_type 'text/html'
   end
 
 end
