@@ -1,4 +1,4 @@
-
+require_relative 'weather'
 class AllWeatherRepresenter
   def initialize(weathers)
     @weathers = weathers
@@ -12,6 +12,6 @@ end
 class AllWeatherRepresenter < Roar::Decorator
   include Roar::JSON
 
-  collection :weathers
+  collection :weathers, extend: WeatherRepresenter, class: Weathers
 end
 =end
