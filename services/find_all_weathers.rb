@@ -1,11 +1,11 @@
 class FindAllWeathers
   extend Dry::Monads::Either::Mixin
-
+ 
   def self.call
-    if (weathers = Weather.all).empty?
-      Left(Error.new(:not_found, 'Weathers not found'))
-    else
-      Right(weathers)
-    end
+    results = HTTP.get("#{WeataiApp.config.Weatai_API}/weather")
+    Right(AllWeatherRepresenter.new(weathers).from_json(results.body))
+  rescue
+    Left(Error.new('Our servers failed - we are investigating!'))
   end
+
 end

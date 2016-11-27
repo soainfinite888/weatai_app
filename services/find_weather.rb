@@ -2,10 +2,10 @@ class FindWeather
   extend Dry::Monads::Either::Mixin
 
   def self.call(params)
-    if (weather = Weather.find(station: params)).nil?
-      Left(Error.new(:not_found, 'Station weather not found'))
-    else
-      Right(weather)
-    end
+    results = HTTP.get("#{WeataiApp.config.Weatai_API}/weather/#{params}")
+    Right(WeatherRepresenter.new(Weather.new).from_json(results.body))
+  rescue
+    Left(Error.new('Our servers failed - we are investigating!'))
   end
+
 end
