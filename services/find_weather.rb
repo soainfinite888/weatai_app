@@ -4,7 +4,7 @@ class FindWeather
   def self.call(params)
 #    station = params[:station]
     station =1
-    results = HTTP.get("#{WeataiApp.config.Weatai_API}/weather/"+station)
+    results = HTTP.get("http://localhost:9292/api/v0.1/weather/1/")
     Right(results.body)
   rescue
     Left(Error.new('Our servers failed - we are investigating!'))
