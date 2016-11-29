@@ -2,7 +2,8 @@ class FindWeather
   extend Dry::Monads::Either::Mixin
 
   def self.call(params)
-    station = params[:station]
+#    station = params[:station]
+    station =1
     results = HTTP.get("#{WeataiApp.config.Weatai_API}/weather/"+station)
     Right(results.body)
   rescue

@@ -12,7 +12,6 @@ class WeataiApp < Sinatra::Base
   end
   
   use Rack::Session::Cookie#, secret: WeataiApp.config.AUTH_KEY
-  use Rack::Flash
 
   set :views, File.expand_path('../../views', __FILE__)
   #set :public_dir, File.expand_path('../../public', __FILE__)

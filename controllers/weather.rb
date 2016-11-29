@@ -9,7 +9,7 @@ class WeataiApp < Sinatra::Base
     result = FindWeather.call(params)
 
     if result.success?
-      @data = result.value
+      @weather = result.value
     else
     #  flash[:error] = result.value.message #use flash, update by views
     end
