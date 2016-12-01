@@ -5,7 +5,7 @@ gem 'puma'
 gem 'econfig'
 gem 'activesupport'
 gem 'simplecov'
-gem 'weatai', '0.1.5'
+gem 'weatai', '0.1.7'
 gem 'json'
 gem 'sequel'  #sequel: Our object-relational mapper
 gem 'rake'

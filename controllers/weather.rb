@@ -14,7 +14,7 @@ class WeataiApp < Sinatra::Base
     #  flash[:error] = result.value.message #use flash, update by views
     end
 
-    slim:instant_weather
+     slim :instant_weather
   end
 
  
