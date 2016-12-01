@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require 'sinatra'
-require 'econfig'
 
 # configure web application
 class WeataiApp < Sinatra::Base
