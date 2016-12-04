@@ -21,6 +21,8 @@ gem 'dry-validation'
 gem 'dry-container'
 gem 'dry-transaction'
 
+gem 'gmaps4rails'
+
 group :development, :test do
 	gem 'sqlite3'  #sqlite3: Local file-based database server
 end
