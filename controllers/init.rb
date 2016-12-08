@@ -2,6 +2,9 @@
 require 'sinatra'
 require 'econfig'
 require 'weatai'
+require 'slim/include'
+require 'http'
+require 'rack-flash'
 
 require_relative 'base'
 

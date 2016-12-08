@@ -1,0 +1,27 @@
+div id="newWeatherModal" class="modal fade" role="dialog"
+  div class="modal-dialog"
+    div class="modal-content"
+      div class="modal-header"
+        h4 New Weather
+      div class="modal-body"
+        form role="form" action="/weather" method='post' id='new-weather'
+          div class="form-weather"
+          /
+            label for= URL:
+            input{ 
+              
+              weather='text' 
+              weather='group_url'
+              weather='fb_group_url_input' 
+              class="form-control"
+              
+            }
+          /
+          button{ 
+            type='submit' id='weather-submit' class='submit' 
+            value='submit' class="btn btn-success" 
+          } Create
+          
+          button{ 
+            type="button" class="btn btn-default" data-dismiss="modal" 
+          } Cancel
