@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-gem 'activesupport','4.2.6'
+gem 'weatai', '0.1.7'
+gem 'activesupport'
 gem 'sinatra', '2.0.0.beta2'
 gem 'puma'
 gem 'econfig'
 gem 'simplecov'
-gem 'weatai', '0.1.7'
 gem 'json','1.8.3'
 gem 'sequel'  #sequel: Our object-relational mapper
 gem 'rake'
