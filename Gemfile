@@ -1,26 +1,23 @@
 source 'https://rubygems.org'
-
+gem 'activesupport','4.2.6'
 gem 'sinatra', '2.0.0.beta2'
 gem 'puma'
 gem 'econfig'
-gem 'activesupport'
 gem 'simplecov'
 gem 'weatai', '0.1.7'
-gem 'json'
+gem 'json','1.8.3'
 gem 'sequel'  #sequel: Our object-relational mapper
 gem 'rake'
 gem 'slim'
 gem 'rack-flash3'
 gem 'rubocop'
 gem 'http'
-
 gem 'roar'
 gem 'multi_json'
 gem 'dry-monads'
 gem 'dry-validation'
 gem 'dry-container'
 gem 'dry-transaction'
-
 gem 'gmaps4rails'
 
 group :development, :test do
