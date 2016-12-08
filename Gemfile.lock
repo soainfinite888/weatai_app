@@ -92,6 +92,7 @@ GEM
     parser (2.3.3.1)
       ast (~> 2.2)
     path_expander (1.0.1)
+    pg (0.19.0)
     powerpack (0.1.1)
     public_suffix (2.0.4)
     puma (3.6.2)
@@ -192,6 +193,7 @@ DEPENDENCIES
   minitest
   minitest-rg
   multi_json
+  pg
   puma
   rack-flash3
   rack-test
