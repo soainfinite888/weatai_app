@@ -1,0 +1,12 @@
+---
+development:
+  Weatai_API: 'http://localhost:9292/api/v0.1'
+  SECRET: 'some secret'
+
+test:
+  Weatai_API: 'http://localhost:9292/api/v0.1'
+  SECRET: 'some secret'
+
+production:
+  Weatai_API: 'https://my-server.com/api/v0.1'
+  SECRET: 'some secret'

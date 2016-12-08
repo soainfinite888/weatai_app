@@ -1,0 +1,16 @@
+.posting.body {
+  font-size: 1.2em;
+}
+
+.attachment.title {
+  font-weight: bold;
+}
+
+.attachment.description {
+  font-style: italic;
+  color: grey;
+}
+
+h1 {
+  font-weight: bold;
+}
