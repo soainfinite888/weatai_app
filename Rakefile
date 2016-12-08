@@ -2,8 +2,8 @@
 require 'rake/testtask'
 
 #[???]
-task :default do
-  puts `rake -T`
+task :run do
+sh 'rerun "rackup -p 9000"'
 end
 
 
