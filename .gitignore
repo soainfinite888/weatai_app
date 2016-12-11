@@ -1,5 +1,3 @@
-
-
 config/app.yml
-db/*.*
-.bundle/
+config/.DS_Store
+.DS_Store

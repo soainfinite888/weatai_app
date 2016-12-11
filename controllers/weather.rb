@@ -6,7 +6,7 @@ class WeataiApp < Sinatra::Base
   #get only one station weather data(from database) on homepage
   get "/?" do
     #search_station = Station.call(params)
-    result = FindWeather.call(params)
+    result = FindWeather.call
 
     if result.success?
       @weather = JSON.parse(result.value)
