@@ -1,27 +1,18 @@
-div id="newWeatherModal" class="modal fade" role="dialog"
+<!-- Trigger the modal with a button -->
+button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" Open Modal
+
+<!-- Modal -->
+div id="myModal" class="modal fade" role="dialog" style="display: none"
   div class="modal-dialog"
+
+    <!-- Modal content-->
     div class="modal-content"
       div class="modal-header"
-        h4 New Weather
+        button type="button" class="close" data-dismiss="modal" &times;
+        h4 class="modal-title" Modal Header
+ 
       div class="modal-body"
-        form role="form" action="/weather" method='post' id='new-weather'
-          div class="form-weather"
-          /
-            label for= URL:
-            input{ 
-              
-              weather='text' 
-              weather='group_url'
-              weather='fb_group_url_input' 
-              class="form-control"
-              
-            }
-          /
-          button{ 
-            type='submit' id='weather-submit' class='submit' 
-            value='submit' class="btn btn-success" 
-          } Create
-          
-          button{ 
-            type="button" class="btn btn-default" data-dismiss="modal" 
-          } Cancel
+        p Some text in the modal.
+      div class="modal-footer"
+        button type="button" class="btn btn-default" data-dismiss="modal" Close
+
