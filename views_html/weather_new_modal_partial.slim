@@ -1,5 +1,5 @@
 <!-- Trigger the modal with a button -->
-button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" Open Modal
+button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" Add Weather
 
 <!-- Modal -->
 div id="myModal" class="modal fade" role="dialog" style="display: none"
@@ -9,10 +9,29 @@ div id="myModal" class="modal fade" role="dialog" style="display: none"
     div class="modal-content"
       div class="modal-header"
         button type="button" class="close" data-dismiss="modal" &times;
-        h4 class="modal-title" Modal Header
+        h4 class="modal-title" Adding Weather Yourself!
  
       div class="modal-body"
-        p Some text in the modal.
-      div class="modal-footer"
-        button type="button" class="btn btn-default" data-dismiss="modal" Close
+        form role="form" action="/add_weather" method='post' id='new-weather-form'
+          div class="form-weather"
+            label for='location_input' Location:
+            input{ 
+              type='text' name='location'
+              id='location_input' class="form-control"
+            }
+            label
+              input type='radio' name='icon_weather'
+              img src='http://placehold.it/40x40/35d/fff&text=f'
+            label
+              input type='radio' name='icon_weather'
+              img src='http://placehold.it/40x40/35d/fff&text=f'
+   
+          button{ 
+            type='submit' id='weather-form-submit' class='submit' 
+            value='submit' class="btn btn-success" 
+          } Add
+          
+          button{ 
+            type="button" class="btn btn-default" data-dismiss="modal" 
+          } Cancel
 
