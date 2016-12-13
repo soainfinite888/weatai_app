@@ -3,12 +3,12 @@ html
   head
     title weatai map
     meta[http-equiv="content-type" content="text/html; charset=UTF-8"]
-    /script{defer async src="https://maps.googleapis.com/maps/api/js?key=@@KEYHERE@@&initMap"}
-    /css:
+    script{defer async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkVO7_zYg1MPEzBi6gNZaBVBuGmfkLSdM&initMap"}
+    css:
       html, body { height: 100%; margin: 0; padding: 0; }
       #map {height: 100%;}
 
-    /javascript:
+    javascript:
 
     /    var map;
     /    function initMap() {
@@ -27,20 +27,6 @@ html
         //dmap.addOverlay(marker);
         //var html = "Weitai<br><br>TRY<br>TEST";
         //map.openInfoWindowHtml (map.getCenter(), html);
- 
-  body
-  include instant_weather
-  br
-  br
-  
-   /div class="row"
-    /dif class="col-lg-12"
-      div id="map"
-  
-  /br
-  /br
-  /.map 
-  /style=("width: 500px; height: 300px") 
 
   div class="row"
     dif class="col-lg-12"
@@ -48,33 +34,8 @@ html
         thead
           tr
             th  Weather Maps
-        tbody
-          tr 
-            td  YOUR LOCATION?
-          tr
-            td  
-            div id="map" 
-          tr  
-            td  maps????
-          tr
-
-
-
-              /form[action="#" onsubmit="showAddress(this.address.value); return false"]
-                p
-                input[type="text" size="60" name="address" value="請輸入地址"]
-                input[type="submit" value="Go!"]
-                /div class=["mymap", @style="width: 500px; height: 300px"]
-                /<div id="mymap" style="width: 500px; height: 500px"></div>
-                div[style="width: 800px;" color="black"]
-                .mymap*{}
-                div id=["mymap", @@style="width: 500px; height: 300px"]
-                /include maps2
-                /#map[style="width: 500px; height: 300px"]
-                #map style=("width: 500px; height: 300px") 
-                iframe[src="../maps.html" width="800px" height="650px"]
-    //div id="map"
-    /iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/search?q=NTHU&key=@@KEYHERE@@" style="border:0" width="99%" 
+        
+  iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/search?q=NTHU&key=AIzaSyAkVO7_zYg1MPEzBi6gNZaBVBuGmfkLSdM" style="border:0" width="99%" 
 
 
   
