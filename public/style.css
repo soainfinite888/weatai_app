@@ -5,7 +5,9 @@ label > input{ /* HIDE RADIO */
 label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
   border:2px solid transparent;
+  width:50px
 }
 label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #f00;
+  width:50px
 }
