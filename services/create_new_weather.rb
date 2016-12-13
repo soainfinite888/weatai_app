@@ -6,6 +6,12 @@ class CreateNewWeather
   extend Dry::Container::Mixin
   
   def self.call(params)
+#    HTTP.post("#{WeataiApp.config.Weatai_API}/weather",
+ #                     json: { url: url })
+    puts params
+  end
+end
+=begin
     Dry.Transaction(container: self) do
       step :validate_weather
       step :call_api_to_load_weather
@@ -45,4 +51,5 @@ class CreateNewWeather
     end
   }
 end
+=end
 
