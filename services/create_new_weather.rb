@@ -8,6 +8,15 @@ class CreateNewWeather
   def self.call(params)
 #    HTTP.post("#{WeataiApp.config.Weatai_API}/weather",
  #                     json: { url: url })
+     HTTP.post('http://localhost:9292/api/v0.1/user_weather',
+               json:{ location: params[:location],
+                      icon_weather: params[:icon_weather],
+                      icon_situation: params[:icon_situation],
+                      icon_side: params[:icon_side],       
+                      icon_activity: params[:icon_activity],
+                      icon_emotion: params[:icon_emotion],
+                      icon_festival: params[:icon_festival],
+                    })
     puts params
   end
 end
