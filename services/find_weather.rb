@@ -13,12 +13,12 @@ class FindWeather
 
 
 
-#  def self.call
-#    station = params[:station]
+    #def self.call
+    #station = params[:station]
 
     #station =4
 
-    3results = HTTP.get("#{WeataiApp.config.Weatai_API}/weather/4/")
+    #results = HTTP.get("#{WeataiApp.config.Weatai_API}/weather/4/")
 
     #Right(results.body)
   rescue
