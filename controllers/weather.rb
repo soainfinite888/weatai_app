@@ -15,6 +15,13 @@ class WeataiApp < Sinatra::Base
     end
     slim :home
   end
+
+  get "/maps?" do
+    slim :mapstest
+  end
+
+
+
   post '/add_weather/?' do
     result = CreateNewWeather.call(params)
 =begin
