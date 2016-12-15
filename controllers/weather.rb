@@ -25,13 +25,15 @@ class WeataiApp < Sinatra::Base
 
   post '/add_weather/?' do
     result = CreateNewWeather.call(params)
-=begin
+
     if result.success?
-      flash[:notice] = 'Group successfully added'
+      flash[:notice] = 'Weather successfully added'
+      puts 'shit'
     else
       flash[:error] = result.value.message
+      puts 'no shit'
     end
-=end
+
     redirect '/'
   end 
 end
