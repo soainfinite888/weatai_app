@@ -1,27 +1,136 @@
-div id="newWeatherModal" class="modal fade" role="dialog"
+<!-- Trigger the modal with a button -->
+button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" Add Weather
+
+<!-- Modal -->
+div id="myModal" class="modal fade" role="dialog" style="display: none"
   div class="modal-dialog"
+
+    <!-- Modal content-->
     div class="modal-content"
       div class="modal-header"
-        h4 New Weather
+        button type="button" class="close" data-dismiss="modal" &times;
+        h4 class="modal-title" Adding Weather Yourself!
+ 
       div class="modal-body"
-        form role="form" action="/weather" method='post' id='new-weather'
+        form role="form" action="/add_weather" method='post' id='new-weather-form'
           div class="form-weather"
-          /
-            label for= URL:
+            label for='location_input' Location:
             input{ 
-              
-              weather='text' 
-              weather='group_url'
-              weather='fb_group_url_input' 
-              class="form-control"
-              
+              type='text' name='location'
+              id='location_input' class="form-control"
             }
-          /
+            div
+              label class='icon-weather'
+                input type='radio' name='icon_weather' value='weather_sunny'
+                img src='/img/icon/weather_sunny.png'
+              label class='icon-weather'
+                input type='radio' name='icon_weather' value='weather_cloudy'
+                img src='/img/icon/weather_cloudy.png'
+              label class='icon-weather'
+                input type='radio' name='icon_weather' value='weather_smallrainy'
+                img src='/img/icon/weather_smallrainy.png'
+              label class='icon-weather'
+                input type='radio' name='icon_weather' value='weather_rainy'
+                img src='/img/icon/weather_rainy.png'
+              label class='icon-weather'
+                input type='radio' name='icon_weather' value='weather_bigrainy'
+                img src='/img/icon/weather_bigrainy.png'
+              label class='icon-weather'
+                input type='radio' name='icon_weather' value='weather_typhoon'
+                img src='/img/icon/weather_typhoon.png'
+            div
+              label class='icon-situation'
+                input type='radio' name='icon_situation' value='situation_windy'
+                img src='/img/icon/situation_windy.png'
+              label class='icon-situation'
+                input type='radio' name='icon_situation' value='situation_strongwind'
+                img src='/img/icon/situation_strongwind.png'
+              label class='icon-situation'
+                input type='radio' name='icon_situation' value='situation_typhoon'
+                img src='/img/icon/situation_typhoon.png'
+              label class='icon-situation'
+                input type='radio' name='icon_situation' value='situation_sunnydoll'
+                img src='/img/icon/situation_sunnydoll.png'
+              label class='icon-situation'
+                input type='radio' name='icon_situation' value='situation_flood'
+                img src='/img/icon/situation_flood.png'
+            div
+              label class='icon-side'
+                input type='radio' name='icon_side' value='side_umbrella'
+                img src='/img/icon/side_umbrella.png'
+              label class='icon-side'
+                input type='radio' name='icon_side' value='side_raincoat'
+                img src='/img/icon/side_raincoat.png'
+              label class='icon-side'
+                input type='radio' name='icon_side' value='side_rainboot'
+                img src='/img/icon/side_rainboot.png'
+              label class='icon-side'
+                input type='radio' name='icon_side' value='side_sunlotion'
+                img src='/img/icon/side_sunlotion.png'
+              label class='icon-side'
+                input type='radio' name='icon_side' value='side_snowman'
+                img src='/img/icon/side_snowman.png'
+            div
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_aircondition'
+                img src='/img/icon/activity_aircondition.png'
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_hotchocolate'
+                img src='/img/icon/activity_hotchocolate.png'
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_icecream'
+                img src='/img/icon/activity_icecream.png'
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_picnic'
+                img src='/img/icon/activity_picnic.png'
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_sunbath'
+                img src='/img/icon/activity_sunbath.png'
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_swim'
+                img src='/img/icon/activity_swim.png'
+              label class='icon-activity'
+                input type='radio' name='icon_activity' value='activity_watermelon'
+                img src='/img/icon/activity_watermelon.png'
+            div
+              label class='icon-emotion'
+                input type='radio' name='icon_emotion' value='emotion_laughing'
+                img src='/img/icon/emotion_laughing.png'
+              label class='icon-emotion'
+                input type='radio' name='icon_emotion' value='emotion_cool'
+                img src='/img/icon/emotion_cool.png'
+              label class='icon-emotion'
+                input type='radio' name='icon_emotion' value='emotion_cold'
+                img src='/img/icon/emotion_cold.png'
+              label class='icon-emotion'
+                input type='radio' name='icon_emotion' value='emotion_boring'
+                img src='/img/icon/emotion_boring.png'
+              label class='icon-emotion'
+                input type='radio' name='icon_emotion' value='emotion_sad'
+                img src='/img/icon/emotion_sad.png'
+              label class='icon-emotion'
+                input type='radio' name='icon_emotion' value='emotion_angry'
+                img src='/img/icon/emotion_angry.png'
+            div
+              label class='icon-festival'
+                input type='radio' name='icon_festival' value='festival_christmas'
+                img src='/img/icon/festival_christmas.png'
+              label class='icon-festival'
+                input type='radio' name='icon_festival' value='festival_dragonboat'
+                img src='/img/icon/festival_dragonboat.png'
+              label class='icon-festival'
+                input type='radio' name='icon_festival' value='festival_halloween'
+                img src='/img/icon/festival_halloween.png'
+              label class='icon-festival'
+                input type='radio' name='icon_festival' value='festival_newyear'
+                img src='/img/icon/festival_newyear.png'
+
           button{ 
-            type='submit' id='weather-submit' class='submit' 
+            type='submit' id='weather-form-submit' class='submit' 
             value='submit' class="btn btn-success" 
-          } Create
+          } Add
           
           button{ 
             type="button" class="btn btn-default" data-dismiss="modal" 
           } Cancel
+

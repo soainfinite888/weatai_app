@@ -6,6 +6,19 @@ class CreateNewWeather
   extend Dry::Container::Mixin
   
   def self.call(params)
+     HTTP.post('http://localhost:9292/api/v0.1/user_weather',
+               json:{ location: params[:location],
+                      icon_weather: params[:icon_weather],
+                      icon_situation: params[:icon_situation],
+                      icon_side: params[:icon_side],       
+                      icon_activity: params[:icon_activity],
+                      icon_emotion: params[:icon_emotion],
+                      icon_festival: params[:icon_festival],
+                      upload_time: Time.now
+                })
+  end
+end
+=begin
     Dry.Transaction(container: self) do
       step :validate_weather
       step :call_api_to_load_weather
@@ -45,4 +58,5 @@ class CreateNewWeather
     end
   }
 end
+=end
 

@@ -1,16 +1,13 @@
-.posting.body {
-  font-size: 1.2em;
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
 }
-
-.attachment.title {
-  font-weight: bold;
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+  width:50px
 }
-
-.attachment.description {
-  font-style: italic;
-  color: grey;
-}
-
-h1 {
-  font-weight: bold;
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+  width:50px
 }

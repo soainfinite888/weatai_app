@@ -11,8 +11,27 @@ class WeataiApp < Sinatra::Base
     else
     #  flash[:error] = result.value.message #use flash, update by views
     end
+
+    slim :home
     
-    slim :maps
     #redirect '/'
   end
+
+  get "/maps?" do
+    slim :mapstest
+  end
+
+
+
+  post '/add_weather/?' do
+    result = CreateNewWeather.call(params)
+=begin
+    if result.success?
+      flash[:notice] = 'Group successfully added'
+    else
+      flash[:error] = result.value.message
+    end
+=end
+    redirect '/'
+  end 
 end
