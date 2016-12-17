@@ -273,19 +273,34 @@ javascript:
       break;
     }
   }
+  function jsonpCallback(data) {
+    console.log(data);
+  }
   function myFunction() {
     var temp = document.getElementById("station").value;
-    api_url='http://localhost:9292/api/v0.1/weather/1';
+    //api_url='http://localhost:9292/api/v0.1/weather/1';
+    api_url='https://weataiapi.herokuapp.com/api/v0.1/weather/1';
+    //api_url='http://weataiapi.herokuapp.com/api/v0.1/weather/1?jsonp=readJSON&?callback=?';
     document.getElementById("demo").innerHTML = 'sata';
-    $.getHTTP(api_url,function(data){
-    document.getElementById("demo").innerHTML = 'da';
-      if(data.stat=='ok'){
+    $.ajax({
+      url: api_url,
+      dataType: "jsonp",
+      jsonpCallback: "jsonpCallback",
+      //dataType: 'json',
+      success:function(data){
         document.getElementById("demo").innerHTML = data.weather;
       }
-      else{
-        document.getElementById("demo").innerHTML = 'false';
-      }
-    });  
+    });
+    //$.getJSON(api_url,function(data){
+    //  document.getElementById("demo").innerHTML = data.weather;
+    //document.getElementById("demo").innerHTML = 'da';
+      //if(data.stat=='ok'){
+        //document.getElementById("demo").innerHTML = data.weather;
+      //}
+      //else{
+       // document.getElementById("demo").innerHTML = 'false';
+      //}
+    //});  
   }
 form name="form1" 
   select name="select1" onchange="make_select2()" id="W"
@@ -300,5 +315,5 @@ form name="form1"
   select name="select3" id='station'
     option 測站
 
-button onclick="myFunction()" Click me
+button id="click" onclick="myFunction()" Click me
 p id="demo"
