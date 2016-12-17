@@ -275,16 +275,18 @@ javascript:
   }
   function myFunction() {
     var temp = document.getElementById("station").value;
-    api_url='http://localhost:9292/api/v0.1/weather/1';
-    document.getElementById("demo").innerHTML = 'sata';
-    $.getHTTP(api_url,function(data){
-    document.getElementById("demo").innerHTML = 'da';
-      if(data.stat=='ok'){
-        document.getElementById("demo").innerHTML = data.weather;
-      }
-      else{
-        document.getElementById("demo").innerHTML = 'false';
-      }
+    //api_url='http://localhost:9292/api/v0.1/weather/1';
+    api_url='http://weataiapi.herokuapp.com/api/v0.1/weather/1?jsonp=readJSON&?callback=?';
+    //document.getElementById("demo").innerHTML = 'sata';
+    $.getJSON(api_url,function(data){
+      document.getElementById("demo").innerHTML = data.weather;
+    //document.getElementById("demo").innerHTML = 'da';
+      //if(data.stat=='ok'){
+        //document.getElementById("demo").innerHTML = data.weather;
+      //}
+      //else{
+       // document.getElementById("demo").innerHTML = 'false';
+      //}
     });  
   }
 form name="form1" 
