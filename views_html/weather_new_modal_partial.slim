@@ -1,3 +1,7 @@
+//google API and javascript file
+script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMDvli-U49zlVFMttMzoMu6jC5jHT7mdk&signed_in=true&callback=initMap"
+script src='/js/address.js' type="text/javascript"
+
 <!-- Trigger the modal with a button -->
 button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" Add Weather
 
@@ -14,11 +18,21 @@ div id="myModal" class="modal fade" role="dialog" style="display: none"
       div class="modal-body"
         form role="form" action="/add_weather" method='post' id='new-weather-form'
           div class="form-weather"
+            //地址輸入處
             label for='location_input' Location:
             input{ 
               type='text' name='location'
               id='location_input' class="form-control"
             }
+            
+            div id="floating-panel"
+              input id="address" type="textbox" value="請輸入地點！"
+              input id="submit" type="button" value="送出地址"
+    
+            div id="map"
+
+
+
             div
               label class='icon-weather'
                 input type='radio' name='icon_weather' value='weather_sunny'
@@ -133,4 +147,6 @@ div id="myModal" class="modal fade" role="dialog" style="display: none"
           button{ 
             type="button" class="btn btn-default" data-dismiss="modal" 
           } Cancel
+
+
 
