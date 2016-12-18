@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 # Weataiapp web application
+require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/cross_origin'
 class WeataiApp < Sinatra::Base
-
+  #register Sinatra::CrossOrigin
   #get only one station weather data(from database) on homepage
   get "/?" do
     result = FindWeather.call(3)
@@ -30,7 +33,7 @@ class WeataiApp < Sinatra::Base
       flash[:notice] = 'Weather successfully added'
       puts 'shit'
     else
-      flash[:error] = result.value.message
+      flash[:error] = 'Weather unsuccessfully added'
       puts 'no shit'
     end
 
