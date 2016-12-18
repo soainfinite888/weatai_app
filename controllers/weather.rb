@@ -3,6 +3,7 @@
 # Weataiapp web application
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/cross_origin'
 class WeataiApp < Sinatra::Base
   #register Sinatra::CrossOrigin
   #get only one station weather data(from database) on homepage
@@ -20,7 +21,7 @@ class WeataiApp < Sinatra::Base
   end
 
   get "/maps?" do
-    slim :pointmaps
+    slim :mapstest
   end
 
 
