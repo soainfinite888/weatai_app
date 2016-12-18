@@ -23,7 +23,15 @@ class WeataiApp < Sinatra::Base
   get "/maps?" do
     slim :mapstest
   end
-
+                         
+  get '/weather/:station' do
+    result = FindWeather.call(:station)
+    if result.success?
+      @weather = JSON.parse(result.value)
+    else
+    end
+    slim :home
+  end
 
 
   post '/add_weather/?' do
