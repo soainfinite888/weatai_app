@@ -3,7 +3,7 @@
 # Weataiapp web application
 require 'sinatra'
 require 'sinatra/base'
-require 'sinatra/cross_origin'
+#require 'sinatra/cross_origin'
 class WeataiApp < Sinatra::Base
   #register Sinatra::CrossOrigin
   #get only one station weather data(from database) on homepage
@@ -39,4 +39,16 @@ class WeataiApp < Sinatra::Base
 
     redirect '/'
   end 
+
+  get "/weather?" do
+    result = FindWeather.call(params[:select3])
+    if result.success?
+      @weather = JSON.parse(result.value)
+    else
+    #  flash[:error] = result.value.message #use flash, update by views
+    end
+
+     slim :home
+  end
+
 end
