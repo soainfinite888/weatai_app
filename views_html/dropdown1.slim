@@ -292,7 +292,8 @@ javascript:
     }
   function myFunction() {
     var temp = document.getElementById("station").value;
-    var api_url = 'https://weataiapi.herokuapp.com/api/v0.1/weather/'.concat(temp.toString()).concat('?jsonp?callback=?');
+    var api_url = 'http://localhost:9292/api/v0.1/weather/'.concat(temp.toString());
+    //.concat('?jsonp?callback=?');
     //var gjson ;
     //gjson = getJSON(api_url) ;
     document.getElementById("demo").innerHTML = api_url;
@@ -312,7 +313,7 @@ javascript:
      // document.getElementById("demo").innerHTML = data.township;
     //});
   //}
-form name="form1" 
+form name="form1" action="/weather/5" method='get'
   select name="select1" onchange="make_select2()" id="W"
     option value="area" 區域
     option value="north" 北部
@@ -325,5 +326,12 @@ form name="form1"
   select name="select3" id='station'
     option 測站
 
-button id="click" onclick="myFunction()" Click me
-p id="demo"
+
+  button{
+    type='submit' id='weather-form-submit'
+    class='submit' value='submit'
+  } find instant weather
+
+
+/id="click" onclick="myFunction()" Click me
+/  p id="demo"
