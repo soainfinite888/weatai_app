@@ -18,7 +18,7 @@ class WeataiApp < Sinatra::Base
   end
 
   get "/maps?" do
-    slim :mapstest
+    slim :pointmaps
   end
 
 
