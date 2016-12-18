@@ -273,43 +273,53 @@ javascript:
       break;
     }
   }
-  function jsonpCallback(data) {
-    console.log(data);
-  }
+  $.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = true; });
+  function getJSON(url) {
+        var resp ;
+        var xmlHttp ;
+
+        resp  = '' ;
+        xmlHttp = new XMLHttpRequest();
+
+        if(xmlHttp != null)
+        {
+            xmlHttp.open( "GET", url, false );
+            xmlHttp.send( null );
+            resp = xmlHttp.responseText;
+        }
+
+        return resp ;
+    }
   function myFunction() {
     var temp = document.getElementById("station").value;
-    //api_url='http://localhost:9292/api/v0.1/weather/1';
-    api_url='https://weataiapi.herokuapp.com/api/v0.1/weather/1';
-    //api_url='http://weataiapi.herokuapp.com/api/v0.1/weather/1?jsonp=readJSON&?callback=?';
-    document.getElementById("demo").innerHTML = 'sata';
-    $.ajax({
-      url: api_url,
-      dataType: "jsonp",
-      jsonpCallback: "jsonpCallback",
-      //dataType: 'json',
-      success:function(data){
-        document.getElementById("demo").innerHTML = data.weather;
-      }
-    });
-    //$.getJSON(api_url,function(data){
-    //  document.getElementById("demo").innerHTML = data.weather;
-    //document.getElementById("demo").innerHTML = 'da';
-      //if(data.stat=='ok'){
-        //document.getElementById("demo").innerHTML = data.weather;
-      //}
-      //else{
-       // document.getElementById("demo").innerHTML = 'false';
-      //}
-    //});  
+    var api_url = 'https://weataiapi.herokuapp.com/api/v0.1/weather/'.concat(temp.toString()).concat('?jsonp?callback=?');
+    //var gjson ;
+    //gjson = getJSON(api_url) ;
+    document.getElementById("demo").innerHTML = api_url;
+    $.getJSON(api_url, function(data) {
+      document.getElementById("demo").innerHTML = data.township;
+    }); 
   }
+  
+  //function myFunction() {
+    //var temp = document.getElementById("station").value;
+    //api_url='http://localhost:9292/api/v0.1/weather/1';
+    //api_url='https://weataiapi.herokuapp.com/api/v0.1/weather/'.concat(temp.toString()).concat('?jsoncallback=?');
+    //document.getElementById("demo").innerHTML = api_url;
+    //api_url='http://weataiapi.herokuapp.com/api/v0.1/weather/1?jsonp=readJSON&?callback=?';
+    //document.getElementById("demo").innerHTML = 'sata';
+    //$.getJSON(api_url, function(data) {
+     // document.getElementById("demo").innerHTML = data.township;
+    //});
+  //}
 form name="form1" 
   select name="select1" onchange="make_select2()" id="W"
-    option 區域
-    option 北部
-    option 中部
-    option 南部
-    option 東部
-    option 離島
+    option value="area" 區域
+    option value="north" 北部
+    option value="middle" 中部
+    option value="south" 南部
+    option value="east" 東部
+    option value="outer" 離島
   select name="select2" onchange="make_select3()" 
     option 縣市　
   select name="select3" id='station'
