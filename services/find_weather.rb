@@ -4,7 +4,9 @@ class FindWeather
 
   def self.call(params)
     #puts "#{WeataiApp.config.Weatai_API}/weather/"+params.to_s
+    #result=HTTP.get("localhost:9292/api/v0.1/weather/"+params.to_s)
     result=HTTP.get("#{WeataiApp.config.Weatai_API}/weather/"+params.to_s)
+    
     #puts result
     #puts result.body
     #puts result.body.length
