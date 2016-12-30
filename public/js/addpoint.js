@@ -78,8 +78,12 @@ function initAutocomplete() {
       userLng = place.geometry.location.lng();
 
 
-      alert(userLat);
-      alert(userLng);
+      document.getElementById("location_lat").value = userLat;
+      document.getElementById("location_lng").value = userLng;
+
+
+      //alert(userLat);
+      //alert(userLng);
 
 
       

@@ -55,7 +55,8 @@ function datapoints3()
   var result = new Array();
   $.ajax(
   {
-    url:  "/userdata.html",
+    //url:  "/userdata.html",
+    url: "localhost:9292/user_weather/all",
     type: 'get',
     cache: false,
     async: false,
