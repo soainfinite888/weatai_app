@@ -1,19 +1,24 @@
-//google API and javascript file
+<!DOCTYPE html>
+html
+  head
+    title addpoint
+    meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
+    meta charset="utf-8"
+    //CSS file
+    link rel='stylesheet' href='/addpoint.css'
+    
+  body
 
-script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk62_tlcxNISArKhZqiom3bslbgBMtvy4&libraries=places&callback=initAutocomplete"
+  
+    //input id="pac-input" class="controls" type="text" placeholder="Search Box"
+    //div id="map" style=("height:800px")
+    
+    
+    //script src='/js/addpoint.js' type="text/javascript"
+    
+    //script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk62_tlcxNISArKhZqiom3bslbgBMtvy4&libraries=places&callback=initAutocomplete"
+  
 
-
-script src='/js/address2.js' type="text/javascript"
-
-
-<!-- Trigger the modal with a button -->
-button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="addweather" Add Weather
-
-<!-- Modal -->
-div id="myModal" class="modal fade" role="dialog" style="display: none"
-  div class="modal-dialog"
-
-    <!-- Modal content-->
     div class="modal-content"
       div class="modal-header"
         button type="button" class="close" data-dismiss="modal" &times;
@@ -25,23 +30,15 @@ div id="myModal" class="modal fade" role="dialog" style="display: none"
             //地址輸入處
             label for='location_input' Location:
             
-            div id="locationField"
-              input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"
+            input id="pac-input" class="controls" type="text" placeholder="請輸入地點"
+            div id="map" style=("height:100px")
     
+    
+            script src='/js/addpoint.js' type="text/javascript"
+    
+            script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk62_tlcxNISArKhZqiom3bslbgBMtvy4&libraries=places&callback=initAutocomplete"
+  
 
-            //input id="pac-input" class="controls" type="text" placeholder="Search Box"
-            //div id="map2"
-            
-            //input{ 
-            //  type='text' name='location'
-            //  id='location_input' class="form-control"
-            //}
-            
-            //div id="panel"
-            //  input id="address" type="textbox" value="請輸入地點！"
-            //  input id="check" type="button" value="送出地址"
-            //  lable id="lablecheck"
-    
 
 
             div
@@ -158,6 +155,20 @@ div id="myModal" class="modal fade" role="dialog" style="display: none"
           button{ 
             type="button" class="btn btn-default" data-dismiss="modal" 
           } Cancel
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

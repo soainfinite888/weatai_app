@@ -24,6 +24,10 @@ class WeataiApp < Sinatra::Base
     slim :pointmaps
   end
 
+  get "/addpoint?" do
+    slim :addpoint
+  end
+
 
 
   post '/add_weather/?' do
