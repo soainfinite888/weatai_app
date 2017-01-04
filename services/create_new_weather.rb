@@ -10,7 +10,7 @@ class CreateNewWeather
     result = ''
     icons.each do |icon|
       unless icon.nil?
-        result = HTTP.post("#{WeataiApp.config.Weatai_API}user_weather/",
+        result = HTTP.post("#{WeataiApp.config.Weatai_API}/user_weather/",
         #result = HTTP.post("localhost:9292/api/v0.1/user_weather/",
                             json:{location: params[:location],
                                   icon: icon,
