@@ -46,6 +46,8 @@ var icons = {
 
 var points = new Array();
 var testpoints = new Array();
+//var javascript_point_json = <%= @userweather.html_safe %>;
+var js_point_json = JSON.parse("<%= @userweather.html_safe %>");
 
 
 //讀取點資料
@@ -57,10 +59,16 @@ function datapoints3()
   {
     //url: "/userdata.html",
     
-    url: "http://localhost:9292/api/v0.1/user_weather/all",
-    //url: "all.html",
-    
+
+    //url: "http://localhost:9292/api/v0.1/user_weather/all?callback=test",
+    url: "../points",
+    //url: "../maps/<%= @userweather %>",
+    //dataType: 'jsonp', 
     type: 'get',
+    //crossDomain: true,
+    //data: data,
+    //success: callback,
+    //error: callback
     cache: false,
     async: false,
     //data: data,
@@ -78,9 +86,18 @@ function datapoints3()
     }
   });
 
-  //alert(result);
       
   return result;
+}
+
+function datapoints4()
+{
+
+$.get("http://localhost:9292/api/v0.1/user_weather/all", function(data){
+            alert(data.responseText);
+      });
+
+
 }
 
 function initMap() {
@@ -94,18 +111,24 @@ function initMap() {
 
 
   //測試用資料
-  /*
+  
   testpoints = [
   ['weather_typhoon', 23.583234, 121.5825975],
   ['weather_sunny', 23.583234, 120.5825975],
   ['weather_sunny', 23.000, 120.5825975]
   ];
-  */
+  
+
+  //testpoints = [@userweather[0]['icon'],@userweather[0]['lat'],@userweather[0]['lng']];
 
   points = datapoints3();
-  
+  //datapoints4();
   //points = testpoints;
 
+  //var javascript_point_json = @userweather;
+
+  
+  //alert(js_point_json[0]['lng']);
   //alert(points);
 
   setMarkers(map);

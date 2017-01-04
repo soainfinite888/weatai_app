@@ -21,13 +21,34 @@ class WeataiApp < Sinatra::Base
   end
 
   get "/maps?" do
+    result = FindUserWeather.call
+    if result.success?
+      @userweather = JSON.parse(result.value)
+      @userweather.to_json
+    else
+      flash[:error] = "can not get user weather"
+    end
+
     slim :pointmaps
   end
 
   get "/addpoint?" do
     slim :addpoint
   end
+ 
+  get "/points?" do
+    result = FindUserWeather.call
+    if result.success?
+      @userweather = JSON.parse(result.value)
 
+      @userweather.to_json
+    else
+      flash[:error] = "can not get user weather"
+    end
+    
+    #@userweather
+    #slim :points
+  end
 
 
   post '/add_weather/?' do
@@ -44,6 +65,7 @@ class WeataiApp < Sinatra::Base
     redirect '/'
   end 
 
+ 
   get "/weather?" do
     result = FindWeather.call(params[:select3])
     if result.success?
@@ -52,7 +74,7 @@ class WeataiApp < Sinatra::Base
     #  flash[:error] = result.value.message #use flash, update by views
     end
 
-     slim :home
+     slim :instant_weather
   end
 
 end

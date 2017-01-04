@@ -1,7 +1,7 @@
-class FindWeather
+class FindUserWeather
   extend Dry::Monads::Either::Mixin
 
-  def self.call(params)
+  def self.call
     result=HTTP.get("#{WeataiApp.config.Weatai_API}user_weather/all")
     
     Right(result.body)
