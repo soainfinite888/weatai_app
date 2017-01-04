@@ -1,20 +1,31 @@
-
-
-    include dropdown1
-    /br
-    /br
-    /include instant_weather
+<!DOCTYPE html>
+html
+  head
+    title addpoint
+    meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
+    meta charset="utf-8"
+    //CSS file
+    link rel='stylesheet' href='/style.css'
+    
+  body
+    h1 Weatai
+    Magic Weatai!
+    
+    //location choose Drop-down menu
+    include dropdown
 
     br
     br
+    
     //include weather_new_modal_partial
 
-    //button type="button" class="btn btn-info btn-lg" id="addweather"  onclick="location.href=../addpoint"  Add
-
+    
+    //add point button
     input type="button"  class="btn btn-info btn-lg" id="addweather"  value="Add" onclick="location.href='../addpoint'"
    
     br
     br
+    //map
     include pointmaps
 
 

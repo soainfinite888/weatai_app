@@ -8,47 +8,36 @@ html
     link rel='stylesheet' href='/addpoint.css'
     
   body
-
-  
-    //input id="pac-input" class="controls" type="text" placeholder="Search Box"
-    //div id="map" style=("height:800px")
-    
-    
-    //script src='/js/addpoint.js' type="text/javascript"
-    
-    //script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk62_tlcxNISArKhZqiom3bslbgBMtvy4&libraries=places&callback=initAutocomplete"
-  
-
     div class="modal-content"
       div class="modal-header"
         button type="button" class="close" data-dismiss="modal" &times;
-        h4 class="modal-title" Adding Weather Yourself!
+        h4 class="modal-title" Adding Point Yourself!
  
       div class="modal-body"
         form role="form" action="/add_weather" method='post' id='new-weather-form'
           div class="form-weather"
-            //地址輸入處
+            
+            //user input name or address of location
             label for='location_input' Location:
             
-            input id="pac-input" class="controls" type="text" placeholder="請輸入地點"
+            input id="pac-input" class="controls" type="text" placeholder="Input Location 請輸入地點"
             div id="map" style=("height:100px")
     
-    
+            //javascript file
             script src='/js/addpoint.js' type="text/javascript"
-    
+            
+            //google maps API, key after key=
             script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk62_tlcxNISArKhZqiom3bslbgBMtvy4&libraries=places&callback=initAutocomplete"
   
-            //緯度
+            //latitude(value will change after user input location)
             div
               label class='lat' 
                 input id="location_lat" type='text' name='lat' value='23.0000'
-                //img src='/img/icon/weather_sunny.png' 
-            //經度
+            
+            //longitude(value will change after user input location)
             div
               label class='lng' 
                 input id="location_lng" type='text' name='lng' value='121.000'
-                //img src='/img/icon/weather_sunny.png' 
-
 
             div
               label class='icon-weather' id="weather_sunny"
@@ -155,12 +144,14 @@ html
               label class='icon-festival' id="festival_newyear"
                 input type='radio' name='icon_festival' value='festival_newyear'
                 img src='/img/icon/festival_newyear.png'
-
+          
+          //add button
           button{ 
             type='submit' id='weather-form-submit' class='submit' 
             value='submit' class="btn btn-success" 
           } Add
           
+          //cancel button
           button{ 
             type="button" class="btn btn-default" data-dismiss="modal" 
           } Cancel

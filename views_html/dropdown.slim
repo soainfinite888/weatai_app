@@ -1,0 +1,25 @@
+
+script src='/js/dropdown.js' type="text/javascript"
+
+form name="form1" method='get' id="myform" action="/weather" target="id_iframe"
+  select name="select1" onchange="make_select2()" id="W"
+    option value="area" 區域
+    option value="north" 北部
+    option value="middle" 中部
+    option value="south" 南部
+    option value="east" 東部
+    option value="outer" 離島
+  select name="select2" onchange="make_select3()" 
+    option 縣市　
+  select name="select3" id='station'
+    option 測站
+
+  button type='submit' id='weather-form-submit' class='submit' value='submit' find instant weather 
+  div class="form_result" id="msg"
+//button id='jsondata' Get JSON data
+p id="demo"
+iframe id="id_iframe" name="id_iframe" scrolling="no" height="50px" width="1000px" frameborder="0"
+//style="display: none;"
+//button id="clickweather" onclick="myfunction()" Click me
+//p id="demo"
+
