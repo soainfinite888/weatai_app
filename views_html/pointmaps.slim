@@ -4,27 +4,26 @@ html
     title pointmaps
     meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta charset="utf-8"
-    /style 
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-   
+    //javascript:
+    //  var js_point_json = JSON.parse("<%= @userweather %>");
+
+    
   body
 
     div id="floating-panel"
       input onclick="showMarkers();" type='button' value="顯示icon"
       input onclick="clearMarkers();" type='button' value="隱藏icon"
       
-      //input onclick="deleteMarkers();" type='button' value="Delete Markers"
+      input onclick="deleteMarkers();" type='button' value="Delete Markers"
     
 
     div id="map" style=("height:800px")
+
+    //script var javascript_side_json = <%= @rails_side_json %>
+    
     script src='/js/point.js' type="text/javascript"
     
     script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMDvli-U49zlVFMttMzoMu6jC5jHT7mdk&callback=initMap"
+
+    //<script src='https://raw.github.com/jamespadolsey/jQuery-Plugins/master/cross-domain-ajax/jquery.xdomainajax.js' type='text/javascript'></script>
+

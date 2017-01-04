@@ -12,7 +12,8 @@ class CreateNewWeather
       unless icon.nil?
         result = HTTP.post("#{WeataiApp.config.Weatai_API}/user_weather/",
         #result = HTTP.post("localhost:9292/api/v0.1/user_weather/",
-                            json:{location: params[:location],
+                            json:{lat: params[:lat],
+                                  lng: params[:lng],
                                   icon: icon,
                                   upload_time: Time.now
                           })
