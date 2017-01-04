@@ -55,11 +55,15 @@ function datapoints3()
   var result = new Array();
   $.ajax(
   {
-    //url:  "/userdata.html",
-    url: "localhost:9292/user_weather/all",
+    //url: "/userdata.html",
+    
+    //url: "http://localhost:9292/api/v0.1/user_weather/all",
+    url: "all.html",
+    
     type: 'get',
     cache: false,
     async: false,
+    //data: data,
     dataType: 'json',
     success: function(data)
     {
@@ -70,7 +74,7 @@ function datapoints3()
     },
 
     error: function(){ 
-      alert("讀取資料點失敗"); 
+      alert("Can Not Load Data 讀取資料點失敗"); 
     }
   });
 
@@ -90,12 +94,14 @@ function initMap() {
 
 
   //測試用資料
+  /*
   testpoints = [
   ['weather_typhoon', 23.583234, 121.5825975],
   ['weather_sunny', 23.583234, 120.5825975],
   ['weather_sunny', 23.000, 120.5825975]
   ];
-  
+  */
+
   points = datapoints3();
   
   //points = testpoints;
