@@ -1,6 +1,8 @@
 
 script src='/js/dropdown.js' type="text/javascript"
 
+p Find Immediate weather from Central Weather Bureau Taiwan and Immediate air quality from Environmental Protection Administration Taiwan
+
 form name="form1" method='get' id="myform" action="/weather" target="id_iframe"
   select name="select1" onchange="make_select2()" id="W"
     option value="area" 區域
@@ -14,10 +16,12 @@ form name="form1" method='get' id="myform" action="/weather" target="id_iframe"
   select name="select3" id='station'
     option 測站
 
-  button type='submit' id='weather-form-submit' class='submit' value='submit' find instant weather 
+  button type='submit' id='weather-form-submit' class='submit' value='submit' Find Weather & Air quality
   div class="form_result" id="msg"
+
 //button id='jsondata' Get JSON data
 p id="demo"
+
 iframe id="id_iframe" name="id_iframe" scrolling="no" height="50px" width="1000px" frameborder="0"
 //style="display: none;"
 //button id="clickweather" onclick="myfunction()" Click me
