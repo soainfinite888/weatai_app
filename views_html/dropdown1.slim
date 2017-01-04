@@ -273,36 +273,15 @@ javascript:
       break;
     }
   }
-  $.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = true; });
-  
-  function getJSON(url) {
-        var resp ;
-        var xmlHttp ;
 
-        resp  = '' ;
-        xmlHttp = new XMLHttpRequest();
-
-        if(xmlHttp != null)
-        {
-            xmlHttp.open( "GET", url, false );
-            xmlHttp.send( null );
-            resp = xmlHttp.responseText;
-        }
-
-        return resp ;
+  $('#weather-form-submit').click(function (event) {
+    event.preventDefault();     
+    if(history.pushState) {
+      history.pushState(null, null, $('#myform').attr('action'));
     }
-  function myFunction() {
-    var temp = document.getElementById("station").value;
-    var api_url = 'http://localhost:9292/api/v0.1/weather/'.concat(temp.toString());//網址請變更
-    //.concat('?jsonp?callback=?');
-    //var gjson ;
-    //gjson = getJSON(api_url) ;
-    document.getElementById("demo").innerHTML = api_url;
-    $.getJSON(api_url, function(data) {
-      document.getElementById("demo").innerHTML = data.township;
-    }); 
-  }
-  
+    return false;
+  });
+
   //function myFunction() {
     //var temp = document.getElementById("station").value;
     //api_url='http://localhost:9292/api/v0.1/weather/1';
@@ -314,7 +293,10 @@ javascript:
      // document.getElementById("demo").innerHTML = data.township;
     //});
   //}
-form name="form1" action="/weather" method='get'
+
+h1 Weatai
+p Magic Weatai!  
+form name="form1" method='get' id="myform" action="/weather" target="id_iframe"
   select name="select1" onchange="make_select2()" id="W"
     option value="area" 區域
     option value="north" 北部
@@ -327,9 +309,12 @@ form name="form1" action="/weather" method='get'
   select name="select3" id='station'
     option 測站
 
-
-  button{
-    type='submit' id='weather-form-submit'
-    class='submit' value='submit'
-  } find instant weather
+  button type='submit' id='weather-form-submit' class='submit' value='submit' find instant weather 
+  div class="form_result" id="msg"
+//button id='jsondata' Get JSON data
+p id="demo"
+iframe id="id_iframe" name="id_iframe" scrolling="no" height="50px" width="1000px" frameborder="0"
+//style="display: none;"
+//button id="clickweather" onclick="myfunction()" Click me
+//p id="demo"
 
