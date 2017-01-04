@@ -57,8 +57,8 @@ function datapoints3()
   {
     //url: "/userdata.html",
     
-    //url: "http://localhost:9292/api/v0.1/user_weather/all",
-    url: "all.html",
+    url: "http://localhost:9292/api/v0.1/user_weather/all",
+    //url: "all.html",
     
     type: 'get',
     cache: false,
