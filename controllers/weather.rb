@@ -3,10 +3,15 @@
 # Weataiapp web application
 require 'sinatra'
 require 'sinatra/base'
+require 'faye'
 #require 'sinatra/cross_origin'
+
 class WeataiApp < Sinatra::Base
   #register Sinatra::CrossOrigin
   #get only one station weather data(from database) on homepage
+  #set :port, 9000
+  set :faye_client, Faye::Client.new( "#{WeataiApp.config.server}" )
+  set :saved_data, Hash.new( [] )
   get "/?" do
     result = FindWeather.call(3)
     if result.success?
@@ -14,6 +19,7 @@ class WeataiApp < Sinatra::Base
     else
     #  flash[:error] = result.value.message #use flash, update by views
     end
+    @saved_data = settings.saved_data
 
     slim :home
     
@@ -56,15 +62,27 @@ class WeataiApp < Sinatra::Base
 
     if result.success?
       flash[:notice] = 'Weather successfully added'
-      puts 'shit'
     else
       flash[:error] = 'Weather unsuccessfully added'
-      puts 'no shit'
     end
 
     redirect '/'
   end 
+  
+  post '/' do
+    channel = params['channel']
+    username = params['username']
+    message = params['message']
+    puts channel
 
+    # Send data out to connected clients
+    settings.faye_client.publish( '/instant', message )
+
+    # Save data for future clients
+    settings.saved_data['/instant'] += [message]
+    redirect '/'
+    #redirect to( '/' )
+  end
  
   get "/weather?" do
     result = FindWeather.call(params[:select3])
@@ -74,7 +92,7 @@ class WeataiApp < Sinatra::Base
     #  flash[:error] = result.value.message #use flash, update by views
     end
 
-     slim :instant_weather
+    slim :instant_weather
   end
 
 end

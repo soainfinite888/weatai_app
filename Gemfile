@@ -3,7 +3,7 @@ ruby "2.3.1"
 
 gem 'weatai', '0.1.7'
 gem 'activesupport'
-gem 'sinatra', '2.0.0.beta2'
+gem 'sinatra'
 gem 'puma'
 gem 'econfig'
 gem 'simplecov'
@@ -11,6 +11,8 @@ gem 'json','1.8.3'
 gem 'rake'
 gem 'slim'
 gem 'rack-flash3'
+gem 'faye', '~> 1.2'
+gem 'thin', '~> 1.7'
 
 gem 'http'
 gem 'roar'
