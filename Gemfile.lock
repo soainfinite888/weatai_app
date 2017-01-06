@@ -12,31 +12,31 @@ GEM
     bond (0.5.1)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
-    concurrent-ruby (1.0.2)
+    concurrent-ruby (1.0.4)
     cookiejar (0.3.3)
-    daemons (1.2.3)
+    daemons (1.2.4)
     data_magic (1.0)
       faker (>= 1.1.2)
       yml_reader (>= 0.6)
     docile (1.1.5)
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
-    dry-configurable (0.3.0)
+    dry-configurable (0.5.0)
       concurrent-ruby (~> 1.0)
-    dry-container (0.5.0)
+    dry-container (0.6.0)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.2.1)
+    dry-core (0.2.3)
       concurrent-ruby (~> 1.0)
     dry-equalizer (0.2.0)
     dry-logic (0.4.0)
       dry-container (~> 0.2, >= 0.2.6)
       dry-core (~> 0.1)
       dry-equalizer (~> 0.2)
-    dry-matcher (0.5.0)
+    dry-matcher (0.6.0)
     dry-monads (0.2.1)
       dry-equalizer
-    dry-transaction (0.8.0)
+    dry-transaction (0.9.0)
       dry-container (>= 0.2.8)
       dry-matcher (>= 0.5.0)
       dry-monads (>= 0.0.1)
@@ -67,9 +67,8 @@ GEM
     em-socksify (0.3.1)
       eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
-    eventmachine (1.2.0.1)
-    eventmachine (1.2.0.1-x64-mingw32)
-    faker (1.6.6)
+    eventmachine (1.2.1)
+    faker (1.7.2)
       i18n (~> 0.5)
     faye (1.2.2)
       cookiejar (>= 0.3.0)
@@ -79,11 +78,10 @@ GEM
       multi_json (>= 1.0.0)
       rack (>= 1.0.0)
       websocket-driver (>= 0.5.1)
-    faye-websocket (0.10.4)
+    faye-websocket (0.10.5)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.14)
-    ffi (1.9.14-x64-mingw32)
     flay (2.8.1)
       erubis (~> 2.7.0)
       path_expander (~> 1.0)
@@ -106,7 +104,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     inflecto (0.0.2)
-    json (2.0.2)
+    json (1.8.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -124,7 +122,7 @@ GEM
     page_navigation (0.10)
       data_magic (>= 0.22)
     path_expander (1.0.1)
-    public_suffix (2.0.4)
+    public_suffix (2.0.5)
     puma (3.6.2)
     rack (1.6.5)
     rack-flash3 (1.0.5)
@@ -155,7 +153,7 @@ GEM
     ruby_parser (3.8.3)
       sexp_processor (~> 4.1)
     rubyzip (1.2.0)
-    selenium-webdriver (3.0.3)
+    selenium-webdriver (3.0.5)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
@@ -190,8 +188,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
-    unf_ext (0.0.7.2-x64-mingw32)
-    watir (6.0.2)
+    watir (6.1.0)
       selenium-webdriver (~> 3.0)
     watir-webdriver (0.9.9)
       selenium-webdriver (>= 2.46.2)
@@ -207,7 +204,6 @@ GEM
 
 PLATFORMS
   ruby
-  x64-mingw32
 
 DEPENDENCIES
   activesupport
@@ -216,7 +212,7 @@ DEPENDENCIES
   dry-transaction
   dry-validation
   econfig
-  faye (~> 1.2)
+  faye (= 1.2.2)
   flay
   flog
   gmaps4rails
@@ -235,7 +231,7 @@ DEPENDENCIES
   simplecov
   sinatra
   slim
-  thin (~> 1.7)
+  thin (= 1.7.0)
   tux
   watir-webdriver
   weatai (= 0.1.7)
