@@ -48,6 +48,9 @@ var points = new Array();
 var testpoints = new Array();
 //var javascript_point_json = <%= @userweather.html_safe %>;
 var js_point_json = JSON.parse("<%= @userweather.html_safe %>");
+var randomlat = 0;
+var randomlng = 0;
+
 
 
 //讀取點資料
@@ -105,19 +108,59 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
                             zoom: 8,
                             center: new google.maps.LatLng(23.583234, 120.5825975), //地圖起始中心(TAIWAN)
-                            mapTypeId: google.maps.MapTypeId.SATELLITE //地圖種類
+                            //mapTypeId: google.maps.MapTypeId.SATELLITE, //地圖種類
                             //mapTypeId: google.maps.MapTypeId.HYBRID
+                            mapTypeId: google.maps.MapTypeId.TERRAIN,
+                            scrollwheel: false,
                             });
 
 
+  //map style
+  /*
+  var styles = [
+  {
+    stylers: [
+      { hue: "#d2e0da" },
+      { saturation: -20 }
+    ]
+  },{
+    featureType: "road",
+    elementType: "geometry",
+    stylers: [
+      { lightness: 80 },
+      { visibility: "simplified" }
+    ]
+  },{
+    featureType: "road",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+  ]; 
+  map.setOptions({styles: styles});
+*/
+
+
+/*
+  options = $.extend({
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    draggable: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }, options);
+*/
   //測試用資料
   
+/*  
   testpoints = [
   ['weather_typhoon', 23.583234, 121.5825975],
   ['weather_sunny', 23.583234, 120.5825975],
   ['weather_sunny', 23.000, 120.5825975]
   ];
-  
+*/  
 
   //testpoints = [@userweather[0]['icon'],@userweather[0]['lat'],@userweather[0]['lng']];
 
@@ -135,18 +178,16 @@ function initMap() {
 }
 
 function setMarkers(map) {
-
-  // Shapes define the clickable region of the icon. The type defines an HTML
-  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-  // The final coordinate closes the poly by connecting to the first coordinate.
-  /*
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-  */
   
   for (var i = 0; i < points.length; i++) {
+
+    //亂數化
+    randomlng = Math.random();
+    randomlat = Math.random();
+    randomlng = randomlng/1000;
+    randomlat = randomlat/1000;
+
+    
     var point = points[i];
     //alert(point[2])
     var image = {
@@ -156,15 +197,17 @@ function setMarkers(map) {
     scaledSize: new google.maps.Size(50,50),
     // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 0)
+    // The anchor for this image is the base of the flagpole at (,).
+    anchor: new google.maps.Point(25,25)
     };
     
     //alert(point[1],point[2]);
 
+
     var marker = new google.maps.Marker({
-      
-      position: {lat: Number(point[1]), lng: Number(point[2])},
+
+      position: {lat: Number(point[1])-0.0005+randomlat, lng: Number(point[2])-0.0005+randomlng},
+
       //position: {lat: 120, lng: 23},
       //alert(position)
       map: map,

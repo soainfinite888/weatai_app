@@ -11,3 +11,57 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #f00;
   width:50px
 }
+
+/* Footer */
+
+#footer {
+        padding: 6em 0;
+        background: orange;
+        color: #fff;
+        text-align: center;
+}
+
+
+/* hahaha */
+
+    #hahaha {
+        padding: 6em 0;
+        background: #FF7744;
+        color: #fff;
+        text-align: center;
+    }
+
+/* mmmsss */
+
+#mmmsss {
+        padding: 6em 0;
+        background: #DDDDDD;
+        color: black;
+        text-align: center;
+}
+
+/* addzzzz */
+
+    #addzzzz {
+        padding: 6em 0;
+        background: #FFDD55;
+        color: #fff;
+        text-align: center;
+    }
+
+.wrapper-dropdown {
+    /* Size and position */
+    position: relative; /* Enable absolute positioning for children and pseudo elements */
+    width: 200px;
+    padding: 10px;
+    margin: 0 auto;
+
+    /* Styles */
+    background: black;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+    /* Font settings */
+    font-weight: bold;
+}
