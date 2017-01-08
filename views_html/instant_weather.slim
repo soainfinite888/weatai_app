@@ -1,22 +1,19 @@
-div class="row"
-  div class="col-lg-12"
-    table
-      thead
-        tr
-          th Weather and Air quality
-      tbody
-        tr
-          td Location: #{@weather['city']}#{@weather['township']} &nbsp&nbsp&nbsp
+body style="background-color:#FF7744"
+  div class="row"
+    div class="col-lg-12" style="font-size:22px;color:white"
+      table
+          tr
+            td Location: #{@weather['city']}#{@weather['township']} &nbsp&nbsp
          
-          td Temperature: #{@weather['temperature']}  &nbsp&nbsp&nbsp
+            td Temperature: #{@weather['temperature']} &nbsp&nbsp
           
-          td Humidity: #{@weather['humidity']} &nbsp&nbsp&nbsp
+            td Humidity: #{@weather['humidity']} &nbsp&nbsp
 
-          td 10-minutes rainfall: #{@weather['MIN_10']} &nbsp&nbsp&nbsp
+            td 10-minutes rainfall: #{@weather['MIN_10']} &nbsp&nbsp
          
-          td PSI: #{@weather['AirQuality']} &nbsp&nbsp&nbsp
+            td PSI: #{@weather['AirQuality']} &nbsp&nbsp
          
-          td Status: #{@weather['Status']} &nbsp&nbsp&nbsp
+            td Status: #{@weather['Status']} &nbsp&nbsp
     
     
 
